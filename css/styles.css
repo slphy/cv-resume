@@ -20,6 +20,7 @@ h2 {
 }
 
 h3 {
+  margin-top: 10px;
   font-size: 1.5rem;
   color: #4a47a3;
   font-family: 'Montserrat', sans-serif;
@@ -36,6 +37,10 @@ hr{
 
 a{
   color: #11999E;
+}
+
+ul li{
+  font-size: 1.2rem;
 }
 
 .top-container {
@@ -61,6 +66,9 @@ a{
   bottom: 300px;
 }
 
+.intro{
+  font-size: 1.2rem;
+}
 
 .education{
   width: 40%;
@@ -90,22 +98,33 @@ a{
 }
 
 .skill-row{
-  width: 55%;
+  width: 70%;
   margin: 50px auto 50px;
   text-align: left;
   line-height: 1.5;
 }
 
 .skill{
-  width: 25%;
+  width: 20%;
   float: left;
   margin-right: 30px;
 }
 
+.webskill{
+  font-size: 1.125rem;
+  margin-bottom: 10px;
+}
+
 .mobile{
-  width: 35%;
+  width: 30%;
   float: right;
   margin-left: 20px;
+}
+
+.mobileskill{
+  font-size: 1.125rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .experience{
@@ -116,7 +135,7 @@ a{
 }
 
 .experience-img{
-  width: 35%;
+  width: 40%;
   float: left;
   margin-right: 30px;
 }
@@ -134,7 +153,11 @@ a{
 
 .date{
   color: #2e279d;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+}
+
+.experiencetext{
+  font-size: 1.125rem;
 }
 
 .contact-message{
