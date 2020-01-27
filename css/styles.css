@@ -30,7 +30,7 @@ hr{
   color: #9656a1;
   border-bottom: none;
   width: 7%;
-  margin: 70px auto;
+  margin: 60px auto;
 }
 
 
@@ -42,6 +42,11 @@ a{
   background-color: #e1f2fb;
   position: relative;
   padding-top: 100px;
+}
+
+.bottom-container{
+  background-color: #66BFBF;
+  padding: 10px 0 10px;
 }
 
 .top-cloud {
@@ -59,7 +64,7 @@ a{
 
 .education{
   width: 40%;
-  margin: 30px auto 50px;
+  margin: 10px auto 30px;
   text-align: left;
   line-height: 1.5;
 }
@@ -72,7 +77,7 @@ a{
 
 .profile{
   width: 35%;
-  margin: 50px 20px 80px;
+  margin: 20px auto 20px;
   text-align: left;
   line-height: 1.2;
   display: inline-block;
@@ -137,6 +142,14 @@ a{
   margin: 30px auto 30px;
 }
 
+.contact-me{
+  margin: 10px auto 10px;
+}
+
 .contact-detail{
   font-size: 2rem;
+}
+
+.contacth2{
+  margin-top: 80px;
 }
