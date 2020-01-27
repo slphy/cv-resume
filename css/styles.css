@@ -90,7 +90,7 @@ a{
 }
 
 .skill-row{
-  width: 50%;
+  width: 55%;
   margin: 50px auto 50px;
   text-align: left;
   line-height: 1.5;
@@ -105,7 +105,7 @@ a{
 .mobile{
   width: 35%;
   float: right;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .experience{
