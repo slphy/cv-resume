@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Oleo+Script+Swash+Caps&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
   <div class="top-container">
     <img class="top-cloud" src="images/cloud.png" alt="cloud-img">
     <h1>I'm Whan.</h1>
@@ -21,25 +23,50 @@
 
   <div>
     <h2>Welcome to my website.</h2>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#justAboutMe">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#justEducation">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="2" href="#justSkills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="3" href="#justExperience">Experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="4" href="#justContactMe">Contact Me</a>
+        </li>
+      </ul>
+    </div>
+    </nav>
     <hr>
   </div>
 
-  <div class="profile">
+  <div class="profile" id="profileContent">
     <img class="profiles" src="Profile.png" alt="profile image">
     <p class="medium"><strong><em>Whan Deng Liao</em></strong></p>
     <p class="medium"><strong>Address </strong>:No 572 Jln Satria 9A Tmn Serom Utama, Sg.Mati Muar, 84410, Johor.</p>
     <p class="medium"><strong>Status </strong>:Immediate</p>
     <p class="medium"><strong>D.O.B </strong>: 23-August-1994</p>
-  </div>
 
-  <div class="objective">
+    <div class="objective">
     <h2>Objective</h2>
     <p class="objectivetext">To kick start a career in Information Technology(Web & Mobile, Android)</p>
+    </div>
   </div>
 
   <div class="middle-container">
-    <hr>
-    <div class="education">
+    <!-- <hr> -->
+    <div class="education" id="educationContent">
       <h2>Education</h2>
       <img class="educationimg" src="images/education.jpg" alt="education-img">
       <ul>
@@ -50,13 +77,13 @@
         <li class="medium">Completed internship training in<br/>Malacca Securities Sdn Bhd</li>
       </ul>
     </div>
-    <hr>
-    <div class="skills">
+    <!-- <hr> -->
+    <div class="skills" id="skillsContent">
       <h2>My Skills</h2>
       <div class="skill-row">
         <img class="skill" src="images/computer.png" alt="picture">
         <h3>Web Development</h3>
-        <p class="medium">Self-learning <strong>Html, CSS, Javascript, MongoDB, JQuery, Atom</strong> through online course.</p>
+        <p class="medium">Self-learning <strong>Html5, CSS, Javascript, JQuery, Atom</strong> through online course.</p>
         <p class="medium">Understand basic of Sqlite3 such as select, insert, update, delete.</p>
       </div>
       <div class="skill-row">
@@ -66,20 +93,19 @@
         <p class="medium">Able to create simple apps with simple functions.</p>
       </div>
     </div>
-    <hr>
-    <div class="experiences">
+    <div class="experiences" id="experiencesContent">
       <h2>My Experience</h2>
       <div class="experience">
         <img class="experience-img" src="images/work-experience.jpg" alt="experience-img">
-        <p class="experiencetext"><strong class="date">[Jan 2020]</strong> Actively looking for both web and mobile developer job.</p>
-        <p class="experiencetext"><strong class="date">[Sept-Dec 2019]</strong> Start learning programming through read book and online course.</p>
-        <p class="experiencetext"><strong class="date">[Feb-May 2019]</strong> Account Assistant - Succeo Retail Sdn Bhd (Replacing Maternity position for 3 months.) </p>
-        <p class="experiencetext"><strong class="date">[Oct 2017-Oct 2018]</strong> Assist in family business(Palm field and personal business)</p>
-        <p class="experiencetext"><strong class="date">[July-Sept 2017]</strong> Proprietary Trader Assistant - Malacca Securities Sdn Bhd (Direct offer from company after internship) </p>
+        <p class="medium"><strong class="date">[Jan 2020]</strong> Actively looking for both web and mobile developer job.</p>
+        <p class="medium"><strong class="date">[Sept-Dec 2019]</strong> Start learning programming through read book and online course.</p>
+        <p class="medium"><strong class="date">[Feb-May 2019]</strong> Account Assistant - Succeo Retail Sdn Bhd (Replacing Maternity position for 3 months.) </p>
+        <p class="medium"><strong class="date">[Oct 2017-Oct 2018]</strong> Assist in family business(Palm field and personal business)</p>
+        <p class="medium"><strong class="date">[July-Sept 2017]</strong> Proprietary Trader Assistant - Malacca Securities Sdn Bhd (Direct offer from company after internship) </p>
       </div>
     </div>
-    <hr>
-    <div class="contact-me">
+    <!-- <hr> -->
+    <div class="contact-me" id="contact-meContent">
       <h2>Get In Touch</h2>
       <h3>Willing to learn anything related to IT</h3>
       <p class="contact-message">May contact me through media at below.</p>
@@ -87,6 +113,7 @@
       <a class="btn" href="MyContact.html">CONTACT ME</a>
     </div>
   </div>
+  <hr>
 
 
   <div class="bottom-container">
@@ -95,6 +122,9 @@
     <a class="footer-link" href="https://www.appbrewery.co/">Website</a> -->
     <p>© 2020 Whan Deng Liao.</p>
   </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="javascript/script.js" charset="utf-8"></script>
 
 </body>
 
