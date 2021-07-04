@@ -1,0 +1,70 @@
+﻿<style>
+    .contact-message {
+        font-size: 1.35rem;
+        width: 40%;
+        margin: 30px auto 30px;
+    }
+
+    .contact-me {
+        margin: 10px auto 10px;
+    }
+
+    .contact-detail {
+        font-size: 2rem;
+    }
+
+    .contacth2 {
+        margin-top: 80px;
+    }
+
+    .contact-button-style {
+        background: #11cdd4;
+        background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
+        background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
+        background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
+        background-image: -o-linear-gradient(top, #11cdd4, #11999e);
+        background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+        -webkit-border-radius: 8;
+        -moz-border-radius: 8;
+        border-radius: 8px;
+        font-family: 'Montserrat', sans-serif;
+        color: #ffffff;
+        font-size: 20px;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+    }
+
+        .contact-button-style:hover {
+            background: #30e3cb;
+            background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
+            background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
+            background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
+            background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
+            background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
+            text-decoration: none;
+        }
+</style>
+
+@{ await Html.RenderPartialAsync("~/Views/Home/Modal/_ContactDetails.cshtml");}
+
+<hr class="purple-dot" />
+<div class="text-center">
+    <div class="contact-me" id="contact-meContent">
+        <h2>Get In Touch</h2>
+        <h3>Willing to learn anything related to IT</h3>
+        <p class="contact-message">May contact me through media at below.</p>
+        <p class="contact-message">Thank you.</p>
+        <button class="contact-button-style" id="btnContact">CONTACT ME</button>
+    </div>
+</div>
+<hr class="purple-dot" />
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#btnContact").on('click', function () {
+                $("#modalContact").modal();
+            });
+        });
+    </script>
+}
