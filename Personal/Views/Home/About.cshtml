@@ -1,0 +1,194 @@
+﻿@model AboutViewModel
+
+<style>
+    .btn-colorflow-style {
+        background: #96D4D4 0% 0% no-repeat padding-box;
+        border: 0.5px solid var(--color-btn-border);
+        border-radius: 5px;
+        opacity: 1;
+        color: #FFFF;
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .profile {
+        width: 55%;
+        margin: auto;
+        /* text-align: left; */
+        line-height: 1.5;
+    }
+
+    .profiles {
+        width: 25%;
+        margin: auto;
+        border-radius: 35%;
+    }
+</style>
+
+<hr class="purple-dot"/>
+<div class="text-center">
+    <div class="profile photo" id="profileContent">
+        <img class="profiles" src="/images/Profile.jpg" alt="profile image">
+    </div>
+    <br />
+    <h2><i>@Model.FirstName @Model.LastName</i></h2>
+    <div style="text-align:left">
+        <h4 class="inline">Address: </h4><span>@Model.Address</span>
+        <br />
+        <h4 class="inline">Status: </h4><span>@Model.Status</span>
+        <br />
+        <h4 class="inline">D.O.B: </h4><span>@Model.BirthdayDate.ToString("dd-MMMM-yyyy")</span>
+        <br />
+        <h4 class="inline">Objective: </h4><span>@Model.Objective</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="well overflow-auto edge-padding-left-right">
+            <h4>This page is not hard coded. Fill in and submit to change the content.</h4>
+            <div class="card-body edge-padding-left-right">
+                @using (Html.BeginForm("About", "Home", FormMethod.Get, new { id = "frmAbout" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 edge-padding-left-right">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 edge-padding-left-right">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 edge-padding-left-right">
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 edge-padding-left-right">
+                                    <label>First Name</label>
+                                    @Html.TextBoxFor(m => m.FirstName, null, new { @class = "form-control", id = "txtFirstName", type = "text" })
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 edge-padding-left-right">
+                                    <label>Last Name</label>
+                                    @Html.TextBoxFor(m => m.LastName, null, new { @class = "form-control", id = "txtLastName", type = "text" })
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 edge-padding-left-right">
+                                    <label>Status</label>
+                                    @Html.TextBoxFor(m => m.Status, null, new { @class = "form-control", id = "txtStatus", type = "text" })
+                                </div>
+                                @*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group row">
+                                        <label class="control-label col-lg-4 col-md-4 col-sm-4">Company Address<span class="red">*</span></label>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 no-padding-left no-padding-right">
+                                                <input type="hidden" value="@(companyAddress?.Id ?? 0)" name="Contact.CompanyAddress[0].Id" />
+                                                <input type="hidden" value="@((int)SLCMAS.Transaction.Core.AddressType.Office)" name="Contact.CompanyAddress[0].Type" />
+                                                <input type="text" required class="form-control" name="Contact.CompanyAddress[0].Address1" value="@companyAddress?.Address1" placeholder="Line 1" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group row">
+                                        <label class="control-label col-lg-4 col-md-4 col-sm-4"></label>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 no-padding-left no-padding-right">
+                                                <input type="text" class="form-control" name="Contact.CompanyAddress[0].Address2" value="@companyAddress?.Address2" placeholder="Line 2" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group row">
+                                        <label class="control-label col-lg-4 col-md-4 col-sm-4"></label>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 no-padding-left no-padding-right">
+                                                <input type="text" class="form-control" name="Contact.CompanyAddress[0].Address3" value="@companyAddress?.Address3" placeholder="Line 3" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group row">
+                                        <label class="control-label col-lg-4 col-md-4 col-sm-4">PostCode<span class="red">*</span></label>
+                                        <div class="col-lg-8 col-md-8 col-sm-8">
+                                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 no-padding-left no-padding-right">
+                                                <input type="text" class="form-control js-number-only" required value="@companyAddress?.Postcode" name="Contact.CompanyAddress[0].Postcode" id="txtOfficePostCode" />
+                                            </div>
+                                        </div>
+                                    </div>*@
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 edge-padding-left-right">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 edge-padding-left-right">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 edge-padding-left-right">
+                                        <label>Address</label>
+                                        @Html.TextBoxFor(m => m.Address, null, new { @class = "form-control", id = "txtAddress", type = "text" })
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 edge-padding-left-right">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 edge-padding-left-right">
+                                        <button class="btn-multiple-gradient btn-multiple-gradient-purple float-left" type="button" id="btnClear">Clear</button>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 edge-padding-left-right">
+                                        <button class="btn-multiple-gradient btn-multiple-gradient-bluegreen float-left" id="btnSubmit">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="purple-dot" />
+
+@section Scripts
+{
+    <script src="~/lib/jquery-serializeToJson/jquery.serializeToJSON.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation/dist/additional-methods.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#btnClear").on('click', function () {
+                $("#txtFirstName").val('');
+                $("#txtLastName").val('');
+                $("#txtStatus").val('');
+                $("#txtAddress").val('');
+                if ($(this).hasClass("btn-multiple-gradient-purple")) {
+                    $(this).removeClass("btn-multiple-gradient-purple");
+                    $(this).addClass("btn-multiple-gradient-peach");
+                }
+                else if ($(this).hasClass("btn-multiple-gradient-peach")) {
+                    $(this).removeClass("btn-multiple-gradient-peach");
+                    $(this).addClass("btn-multiple-gradient-yelloworange");
+                }
+                else if ($(this).hasClass("btn-multiple-gradient-yelloworange")) {
+                    $(this).removeClass("btn-multiple-gradient-yelloworange");
+                    $(this).addClass("btn-multiple-gradient-lightblue");
+                }
+                else if ($(this).hasClass("btn-multiple-gradient-lightblue")) {
+                    $(this).removeClass("btn-multiple-gradient-lightblue");
+                    $(this).addClass("btn-multiple-gradient-bluegreen");
+                }
+                else if ($(this).hasClass("btn-multiple-gradient-bluegreen")) {
+                    $(this).removeClass("btn-multiple-gradient-bluegreen");
+                    $(this).addClass("btn-multiple-gradient-purple");
+                }
+            });
+
+            //$("#btnSubmit").on("click", function () {
+            //    var _$form = $('#frmAbout');
+            //    var formJson = _$form.serializeToJSON();
+            //    var about = {
+            //        FirstName: formJson.FirstName,
+            //        LastName: formJson.LastName,
+            //        Status: formJson.Status,
+            //        Address: formJson.Address
+            //    };
+
+            //    try {
+            //        editAbout(about);
+            //    }
+            //    catch (error) {
+            //        alert("Failed" + error);
+            //    }
+            //});
+
+            $("#frmAbout").submit(function (e) {
+                e.preventDefault();
+                var formAction = $(this).attr('action');
+
+                formAction += "?&FirstName=" + $("#txtFirstName").val().trim() +
+                    '&LastName=' + $("#txtLastName").val().trim() +
+                    '&Status=' + $("#txtStatus").val().trim() +
+                    '&Address=' + $('#txtAddress').val().trim();
+                window.location.href = formAction;
+            });
+        });
+    </script>
+}
