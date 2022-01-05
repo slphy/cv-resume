@@ -1,9 +1,10 @@
 document.querySelector("h1").addEventListener("click", changeColor);
 
 function changeColor(){
-  document.querySelectorAll("h1")[0].style.color = "purple";
+  document.querySelectorAll("h1")[0].style.color = "#728FCE";
 }
 
+var $punchline = "Better watch out for those semi-colons";
 // var contentId = ["profileContent","educationContent","skillsContent","experiencesContent","contact-meContent"];
 
 document.querySelectorAll("li a")[0].addEventListener("click", function(){

@@ -43,6 +43,55 @@ a:hover {
   color: #EAF6F6;
 }
 
+.heading-primary-main{
+  display: block;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out
+}
+
+.heading-primary-sub{
+  font-weight: 700;
+  letter-spacing: 17.4px;
+  animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+  0%{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80%{
+    transform: translateX(10px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0%{
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80%{
+    transform: translateX(-10px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+
+
 .top-container {
   background-color: #e1f2fb;
   position: relative;
@@ -188,14 +237,28 @@ a:hover {
   text-decoration: none;
 }
 
+.btn:link,
+.btn:visited{
+  text-decoration: none;
+  border-radius: 100px;
+  transition: all .2s;
+}
+
 .btn:hover {
-  background: #30e3cb;
+  background: #728FCE;
   background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
   background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
   background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
   background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
   background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
   text-decoration: none;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0, 0.2);
+}
+
+.btn:active{
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0,0,0, 0.2);
 }
 
 
