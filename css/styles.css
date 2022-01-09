@@ -34,6 +34,14 @@ hr{
   margin: 60px auto;
 }
 
+d {
+  position:fixed;
+  height:4px;
+  width:4px;
+  background:#222;
+  border-radius:50%;
+  z-index: 1;
+}
 
 a{
   color: #11999E;
@@ -41,6 +49,10 @@ a{
 
 a:hover {
   color: #EAF6F6;
+}
+
+a.sti-link:hover{
+  color: #FFAE42;
 }
 
 .heading-primary-main{
@@ -90,7 +102,43 @@ a:hover {
   }
 }
 
+i{
+  position:fixed;
+  left:var(--x);
+  top: var(--y);
+  animation: drawingX-axis var(--a,4s) linear infinite;
+}
 
+i  u {
+  position:absolute;
+  width:50px;
+  height:50px;
+  margin:-25px 0 0 -25px;
+  border-radius:50%;
+  background:radial-gradient(at 30% 30%,#0000,#000a) red;
+  transform:translate(0px);
+  display: none;
+}
+
+.drawing{
+  height: 0px;
+}
+
+i u.start {
+  animation: drawingY-axis var(--d,1s) cubic-bezier(.5,-900,.5,900) infinite;
+}
+
+@keyframes drawingX-axis {
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes drawingY-axis {
+  to {
+    transform:translate(0.5px);
+  }
+}
 
 .top-container {
   background-color: #e1f2fb;
@@ -237,11 +285,25 @@ a:hover {
   text-decoration: none;
 }
 
+.btn::after{
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
 .btn:link,
 .btn:visited{
   text-decoration: none;
   border-radius: 100px;
   transition: all .2s;
+  position: relative;
 }
 
 .btn:hover {
@@ -261,6 +323,14 @@ a:hover {
   box-shadow: 0 5px 10px rgba(0,0,0, 0.2);
 }
 
+.btn:hover::after{
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-lightblue::after{
+  background-color: #ffb733;
+}
 
 .ml-auto,
 .mx-auto {
